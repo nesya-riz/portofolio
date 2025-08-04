@@ -1,0 +1,166 @@
+:root {
+  --blue: #1a2a80;
+  --purple: #3b38a0;
+  --light-gray: #f8f8f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: white;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  padding: 1rem 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: var(--blue);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar.scrolled .nav-links li a,
+.navbar.scrolled .logo {
+  color: white;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.navbar.scrolled .menu-toggle {
+  color: white;
+}
+
+/* SECTIONS */
+section {
+  padding: 6rem 1rem 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--purple);
+  display: inline-block;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+.profil-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--purple);
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--light-gray);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--blue);
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    color: white;
+    padding: 0.5rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    background-color: var(--blue);
+  }
+
+  .navbar .logo {
+    color: white;
+  }
+
+  .profil-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+  }
+}
